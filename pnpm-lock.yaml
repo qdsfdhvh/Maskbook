@@ -364,6 +364,7 @@ importers:
       assert: ^2.0.0
       async-call-rpc: ^6.0.1
       bignumber.js: ^9.0.2
+      binaryen: ^105.0.0
       bip39: ^3.0.2
       buffer: ^6.0.3
       classnames: ^2.3.1
@@ -562,6 +563,7 @@ importers:
       '@pmmmwh/react-refresh-webpack-plugin': 0.5.4_5ef818c3919d9e29bf1bd49b40aeefcd
       '@typescript-eslint/eslint-plugin': 5.11.0_04e76d06685fd3c953373317ef352814
       '@typescript-eslint/parser': 5.11.0_eslint@8.9.0+typescript@4.6.1-rc
+      binaryen: 105.0.0
       copy-webpack-plugin: 10.2.4_webpack@5.68.0
       html-webpack-plugin: 5.5.0_webpack@5.68.0
       react-devtools-core: 4.23.0
@@ -11099,6 +11101,11 @@ packages:
   /binary-extensions/2.2.0:
     resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}
     engines: {node: '>=8'}
+
+  /binaryen/105.0.0:
+    resolution: {integrity: sha512-4d8WX9M30cHHEDkCT+Dci9CT27TVIGwxOA6R/JXjgaKTGba90TuBNmoRmoZGE6eRF8YGICFD+GODom4/eUD0Zw==}
+    hasBin: true
+    dev: true
 
   /bindings/1.5.0:
     resolution: {integrity: sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==}

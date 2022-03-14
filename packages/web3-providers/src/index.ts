@@ -8,6 +8,7 @@ import { KeyValueAPI } from './kv'
 import { TwitterAPI } from './twitter'
 import { TokenListAPI } from './token-list'
 import { TokenPriceAPI } from './token-price'
+import { GoPlusLabsAPI } from './gopluslabs'
 
 export * from './types'
 export * from './hooks'
@@ -22,6 +23,7 @@ export const Explorer = new NativeExplorerAPI()
 export const RSS3 = new RSS3API()
 export const KeyValue = new KeyValueAPI()
 export const Twitter = new TwitterAPI()
+export const GoPlusLabs = new GoPlusLabsAPI()
 
 export const TokenList = new TokenListAPI()
 export const TokenPrice = new TokenPriceAPI()

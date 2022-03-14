@@ -43,9 +43,6 @@ export const twitterShared: SocialNetwork.Shared & SocialNetwork.Base = {
                 win.document.addEventListener('DOMContentLoaded', win.focus)
             }
         },
-        // getShareLinkURL(message) {
-        //     return new URL(`https://twitter.com/intent/tweet?text=${encodeURIComponent(message)}`)
-        // },
         createPostContext: createSNSAdaptorSpecializedPostContext({
             payloadParser: deconstructPayload,
             payloadDecoder: twitterEncoding.payloadDecoder,

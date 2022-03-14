@@ -24,12 +24,6 @@ export const facebookShared: SocialNetwork.Shared & SocialNetwork.Base = {
             url.searchParams.set('u', 'mask.io')
             window.open(url, '_blank', 'noopener noreferrer')
         },
-        // getShareLinkURL(message) {
-        //     const url = new URL('https://www.facebook.com/sharer/sharer.php')
-        //     url.searchParams.set('quote', message)
-        //     url.searchParams.set('u', 'mask.io')
-        //     return url
-        // },
         createPostContext: createSNSAdaptorSpecializedPostContext({
             payloadParser: deconstructPayload,
             getURLFromPostIdentifier: getPostURL,

@@ -84,18 +84,15 @@ export function RedPacket(props: RedPacketProps) {
         payload.contract_version > 3 ? web3.eth.accounts.sign(account, payload.password).signature : payload.password,
     )
 
-    const shareText = activatedSocialNetworkUI.utils
-        .getShareLinkURL?.(
-            (listOfStatus.includes(RedPacketStatus.claimed) || claimState.type === TransactionStateType.CONFIRMED
-                ? isTwitter(activatedSocialNetworkUI) || isFacebook(activatedSocialNetworkUI)
-                    ? t('plugin_red_packet_share_message_official_account', shareTextOption)
-                    : t('plugin_red_packet_share_message_not_twitter', shareTextOption)
-                : isTwitter(activatedSocialNetworkUI) || isFacebook(activatedSocialNetworkUI)
-                ? t('plugin_red_packet_share_unclaimed_message_official_account', shareTextOption)
-                : t('plugin_red_packet_share_unclaimed_message_not_twitter', shareTextOption)
-            ).trim(),
-        )
-        .toString()
+    const shareText = (
+        listOfStatus.includes(RedPacketStatus.claimed) || claimState.type === TransactionStateType.CONFIRMED
+            ? isTwitter(activatedSocialNetworkUI) || isFacebook(activatedSocialNetworkUI)
+                ? t('plugin_red_packet_share_message_official_account', shareTextOption)
+                : t('plugin_red_packet_share_message_not_twitter', shareTextOption)
+            : isTwitter(activatedSocialNetworkUI) || isFacebook(activatedSocialNetworkUI)
+            ? t('plugin_red_packet_share_unclaimed_message_official_account', shareTextOption)
+            : t('plugin_red_packet_share_unclaimed_message_not_twitter', shareTextOption)
+    ).trim()
 
     const [refundState, refundCallback, resetRefundCallback] = useRefundCallback(
         payload.contract_version,
@@ -117,7 +114,7 @@ export function RedPacket(props: RedPacketProps) {
             canClaim &&
                 setTransactionDialog({
                     open: true,
-                    shareText: shareText!,
+                    shareText,
                     state,
                     summary: t('plugin_red_packet_claiming_from', { name: payload.sender.name }),
                 })
